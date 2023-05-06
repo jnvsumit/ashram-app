@@ -51,7 +51,7 @@ const BookCard = ({
             }
           <BookCardContent>
             <BookCardTitle>{title}</BookCardTitle>
-          <span style={{fontSize: "50px", color: "#021d25"}}>by {" "} </span>
+          <span style={{fontSize: "15px", color: "#021d25"}}>by {" "} </span>
             <BookCardAuthorWrapper>
             {
                 authors.map((author, index) => <BookCardAuthor key={index} >{index === authors.length - 1 ? author : author + ","}</BookCardAuthor>)

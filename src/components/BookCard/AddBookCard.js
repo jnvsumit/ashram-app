@@ -5,12 +5,11 @@ const AddBookCardButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 310px;
-  height: 430px;
+  width: 200px;
+  height: 300px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 5px;
-  margin: 16px;
   text-decoration: none;
   color: #000;
   font-size: 48px;

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0 16px;
+
 `;
 
-export const Main = styled.main``;
+export const Main = styled.main`
+  margin:0;
+`;
 
 export const CarouselSection = styled.section`
-  margin: 32px 0;
+  margin: 0;
 `;
 
 export const BooksArticlesSection = styled.section`
@@ -19,6 +19,7 @@ export const BooksArticlesSection = styled.section`
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
+    text-align:center;
   }
 `;
 
@@ -35,7 +36,7 @@ export const VideoSection = styled.section`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const ContextSection = styled.section`
