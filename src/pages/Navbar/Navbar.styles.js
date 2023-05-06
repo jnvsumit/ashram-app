@@ -51,8 +51,8 @@ export const NavLinks = styled.ul`
 
 
 export const NavItem = styled.li`
-  margin-left:30px;
-  margin-right:30px;
+  margin-left:20px;
+  margin-right:20px;
   list-style-type:none;
   @media (max-width: 575px) {
 
