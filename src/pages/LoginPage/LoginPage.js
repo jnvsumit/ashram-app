@@ -1,35 +1,17 @@
-import React, {useContext, useEffect, useState} from "react";
-import { apiCall } from "../../api/adapter";
+import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContextProvider";
-import {
-  LoginContainer,
-  Title,
-  FormLabel,
-  TextInput,
-  SubmitButton,
-  BottomText,
-  BottomLink,
-} from "./LoginPage.styles";
+import { LoginContainer } from "./LoginPage.styles";
 import { LoadingContext } from "../../context/LoadingContextProvider";
 import withLoading from "../../components/HOC/WithLoading";
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import Formp, {ComponentTypes, InputTypes} from "../../components/Form/Formp";
 
 function LoginPage() {
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-  });
   const { user, onLogin } = useContext(UserContext);
   const { setLoading } = useContext(LoadingContext);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((prevForm) => ({ ...prevForm, [name]: value }));
-  };
-
-  const handleLogin = async (event) => {
-      event.preventDefault();
-      onLogin(form);
+  const handleLogin = async (data) => {
+    onLogin(data);
   };
 
   return (
@@ -37,27 +19,31 @@ function LoginPage() {
         {
           !user.isLoggedIn ?
           <LoginContainer>
-            <Title>Sign in to your account</Title>
-            <form>
-              <FormLabel htmlFor="username">Username:</FormLabel>
-              <TextInput
-                  type="text"
-                  id="username"
-                  name="username"
-                  value={form.username}
-                  onChange={handleChange}
-                  required
-              />
-              <FormLabel htmlFor="password">Password:</FormLabel>
-              <TextInput
-                  type="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  required
-              />
-              <SubmitButton onClick={handleLogin}>Login</SubmitButton>
-            </form>
+            <Formp
+                onSubmit={handleLogin}
+                formLabel="Sign in to your account"
+                submitLabel="Sign in"
+                elements={
+                [
+                  {
+                    componentType: ComponentTypes.TEXT,
+                    type: InputTypes.TEXT.TEXT,
+                    name: "username",
+                    label: "Username",
+                    placeholder: "Enter your username",
+                    required: true
+                  },
+                  {
+                    componentType: ComponentTypes.TEXT,
+                    type: InputTypes.TEXT.PASSWORD,
+                    name: "password",
+                    label: "Password",
+                    placeholder: "Enter your password",
+                    required: true
+                  }
+                ]
+            }
+            />
           </LoginContainer> : <Navigate to={"/profile"} />
         }
       </>
