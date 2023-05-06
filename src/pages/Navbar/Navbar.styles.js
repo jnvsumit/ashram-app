@@ -1,34 +1,64 @@
 /**
  * @file Navbar.styles.js
  */
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
+
+const fadeIn = keyframes`
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
 `;
 
-export const LogoContainer = styled.div``;
+export const Nav = styled.nav`
+  display:flex;
+  justify-content:space-between;
+  .navbar-toggler:focus,
+  .navbar-toggler {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  & .navbar-collapse {
+    opacity: 10;
+    animation: ${fadeIn} 2s ease forwards;
+    transition: all 0.5s ease-in-out;
+
+  }
+
+  & .show {
+    opacity: 1;
+  }
+`;
+
+export const LogoContainer = styled.div`
+`;
+
+
 
 export const NavLinks = styled.ul`
-  display: flex;
-  list-style-type: none;
-  flex-wrap: wrap;
+  display:flex;
+  margin:auto;
+  padding:0px;
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
 `;
 
 
 export const NavItem = styled.li`
-  margin-right: 30px;
+  margin-left:20px;
+  margin-right:20px;
+  list-style-type:none;
+  @media (max-width: 575px) {
+
+    text-align:center;
+    padding:10px;
+  }
 `;
 
 export const NavLink = styled(Link)`

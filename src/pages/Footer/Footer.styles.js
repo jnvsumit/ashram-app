@@ -7,11 +7,15 @@ export const StyledFooter = styled.footer`
   padding: 20px 40px;
   background-color: #333;
   color: #fff;
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
 `;
 
 export const Logo = styled.div`
   img {
     height: 150px;
+    padding:20px;
   }
 `;
 
@@ -19,6 +23,7 @@ export const Contact = styled.div`
   h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    text-align:center;
   }
 
   form {

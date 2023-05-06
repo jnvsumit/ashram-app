@@ -1,51 +1,28 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./Carousel.css";
+import { Carousel, Col, Container, Row } from "react-bootstrap"
+import './Carousel.css'
 
-const Carousel = ({ images }) => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const previousImage = useCallback(() => {
-    setCurrentImage(
-      (currentImage - 1 + images.length) % images.length
-    );
-  }, [currentImage, images.length]);
-
-  const nextImage = useCallback(() => {
-    setCurrentImage(
-      (currentImage + 1) % images.length
-    );
-  }, [currentImage, images.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextImage();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [nextImage]);
-
+const ImageCarousel = ({ images }) => {
   return (
-    <div className="carousel">
-      <div className="image-container">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`${index + 1}`}
-            className={`carousel-image ${
-              index === currentImage ? "active" : ""
-            }`}
-          />
-        ))}
-      </div>
-      <button className="previous-button" onClick={previousImage}>
-        {"<"}
-      </button>
-      <button className="next-button" onClick={nextImage}>
-        {">"}
-      </button>
+    <div className="image-container">
+      <Row>
+        <Col>
+          <Carousel>
+            {images.map((image, index) => (
+              <Carousel.Item key={index}>
+                <img src={image} />
+                <Carousel.Caption>
+                  <h1>{`Image ${index + 1}`}</h1>
+                  <p>Lorem ipsum lorem ipsum</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Col>
+      </Row>
     </div>
   );
 };
 
-export default Carousel;
+export default ImageCarousel;
+
