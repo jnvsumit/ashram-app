@@ -4,8 +4,19 @@ export const AppContainer = styled.div`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+
+    .slick-arrow{
+        background-color:gray;  
+        border-radius:70px;
+    }
+    .slick-slider{
+        width:90%;
+        margin:auto;
+    }
+    
+    
 `;
+
 
 export const AppContent = styled.div`
     display: flex;
