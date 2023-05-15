@@ -13,11 +13,10 @@ export const CarouselSection = styled.section`
 `;
 
 export const BooksArticlesSection = styled.section`
-  margin: 64px 0;
-
+  margin: 64px auto auto auto;
   h2 {
+    font-family: 'Sofia', sans-serif;
     font-size: 28px;
-    font-weight: bold;
     margin-bottom: 20px;
     text-align:center;
   }
@@ -34,9 +33,8 @@ export const VideoSection = styled.section`
 `;
 
 export const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin:10px auto 10px auto;
+  background:#eeeee4;
 `;
 
 export const ContextSection = styled.section`

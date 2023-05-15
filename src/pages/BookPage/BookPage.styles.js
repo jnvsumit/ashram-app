@@ -13,6 +13,9 @@ export const BooksArticlesSection = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
+    h2{
+      font-family:"Sofia", sans-serif;
+    }
 `;
 
 //   h2 {

@@ -9,6 +9,7 @@ const AddBookCardButton = styled.button`
   height: 300px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
+  margin:10px;
   border-radius: 5px;
   text-decoration: none;
   color: #000;

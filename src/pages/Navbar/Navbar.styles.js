@@ -36,13 +36,14 @@ export const Nav = styled.nav`
 `;
 
 export const LogoContainer = styled.div`
+  margin-left:15px;
 `;
 
 
 
 export const NavLinks = styled.ul`
+  margin: auto 0 auto auto;
   display:flex;
-  margin:auto;
   padding:0px;
   @media (max-width: 575px) {
     flex-direction: column;
@@ -53,6 +54,8 @@ export const NavLinks = styled.ul`
 export const NavItem = styled.li`
   margin-left:20px;
   margin-right:20px;
+  font-family: 'Lato', sans-serif;
+  text-transform:uppercase;
   list-style-type:none;
   @media (max-width: 575px) {
 
