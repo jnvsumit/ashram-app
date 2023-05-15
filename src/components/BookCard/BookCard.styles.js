@@ -11,18 +11,18 @@ export const StyledLink = styled(Link)`
 
 export const StyledBookCard = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
   width: 200px;
   height: 300px;
-  margin-bottom:10px;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   text-shadow: 0 0 5px rgba(255, 255, 240, 0.7);
+  z-index:auto;
   background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.5),
